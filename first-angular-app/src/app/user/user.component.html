@@ -1,0 +1,13 @@
+<div>
+  <button>
+    <!-- property binding syntax -->
+    <img
+      [src]="'assets/users/' + selectedUser.avatar"
+      [alt]="selectedUser.id"
+    />
+    <!-- string interpolation, only use between tags -->
+    <span>
+      {{ selectedUser.name }}
+    </span>
+  </button>
+</div>
