@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, computed, signal } from '@angular/core';
 import { DUMMY_USERS } from '../dummy-users';
 
 @Component({
@@ -27,10 +27,13 @@ export class UserComponent {
   */
   //use signal
   selectedUser = signal(DUMMY_USERS[0]);
+  // when the selectedUser is changed, the augular will recompute the imagePath value
+  // only be recomputed if one of the signals used inside of it
+  imagePath = computed(() => 'assets/users/' + this.selectedUser().avatar)
 
-  get imagePath() {
-    return 'assets/users/' + this.selectedUser().avatar;
-  }
+  // get imagePath() {
+  //   return 'assets/users/' + this.selectedUser().avatar;
+  // }
 
   onSelectUser() {
     alert('first');

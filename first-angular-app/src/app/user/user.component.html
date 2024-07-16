@@ -3,8 +3,11 @@
   <button (click)="onSelectUser()">
     <!-- property binding syntax -->
     <!-- attribute binding allows you to bind attributes to dynamic values, set attribute name -->
+
+    <!-- imagePath => imagePath() cuz under the hood it also creates signal and the type is signal too -->
     <img
-      [src]="imagePath"
+      [src]="imagePath()"
+      
       [alt]="selectedUser().id"
       [attr.dyna-name]="selectedUser().id"
     />
