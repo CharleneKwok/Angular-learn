@@ -1,13 +1,17 @@
 <div>
-  <button>
+  <!-- use () to add eventlisener -->
+  <button (click)="onSelectUser()">
     <!-- property binding syntax -->
+    <!-- attribute binding allows you to bind attributes to dynamic values, set attribute name -->
     <img
-      [src]="'assets/users/' + selectedUser.avatar"
-      [alt]="selectedUser.id"
+      [src]="imagePath"
+      [alt]="selectedUser().id"
+      [attr.dyna-name]="selectedUser().id"
     />
     <!-- string interpolation, only use between tags -->
     <span>
-      {{ selectedUser.name }}
+      {{ selectedUser().name }}
+      <!-- getter for signal value -->
     </span>
   </button>
 </div>
